@@ -1,33 +1,46 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="209" height="54" viewBox="0 0 209 54">
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="200" viewBox="0 0 720 200">
+
   <defs>
-    <style>
-      .cls-1 {
-        fill: #2584ff;
-        stroke: #2584ff;
-      }
+    <!-- Sleek neon-accent gradient -->
+    <linearGradient id="h-gradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#00C6FF"/>
+      <stop offset="50%" stop-color="#3A5BFF"/>
+      <stop offset="100%" stop-color="#AE44FF"/>
+    </linearGradient>
 
-      .cls-1, .cls-2 {
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        stroke-width: 10px;
-        fill-rule: evenodd;
-      }
-
-      .cls-2 {
-        fill: #ff3400;
-        stroke: #ff3400;
-        mix-blend-mode: lighten;
-      }
-
-      .cls-3 {
-        font-size: 32.498px;
-        fill: #fff;
-        font-family: Inter;
-        font-weight: 700;
-      }
-    </style>
+    <!-- Soft glow for icon -->
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
   </defs>
-  <path id="Polygon_1_copy_2" data-name="Polygon 1 copy 2" class="cls-1" d="M43.851,29.7L24.244,39.2,32.037,14.02Z"/>
-  <path id="Polygon_1_copy_2-2" data-name="Polygon 1 copy 2" class="cls-2" d="M37.033,29.7L56.64,39.2,48.847,14.02Z"/>
-  <text id="Moshify" class="cls-3" transform="translate(71.466 35.437) scale(0.923)">Moshify</text>
+
+  <!-- New Icon: Sharp geometric “H” made from two pillars + beam -->
+  <g transform="translate(25,35)" filter="url(#glow)">
+    <!-- Left pillar -->
+    <path d="M10 0 H50 V130 H10 Z" fill="#0F0F11" stroke="url(#h-gradient)" stroke-width="4" rx="8"/>
+
+    <!-- Right pillar -->
+    <path d="M100 0 H140 V130 H100 Z" fill="#0F0F11" stroke="url(#h-gradient)" stroke-width="4" rx="8"/>
+
+    <!-- Middle beam -->
+    <rect x="50" y="50" width="50" height="30" rx="6" fill="url(#h-gradient)"/>
+  </g>
+
+  <!-- Text branding -->
+  <text x="200" y="95" font-family="Inter, Helvetica, Arial, sans-serif"
+        font-size="64" font-weight="700" fill="#FFFFFF" letter-spacing="1">
+    Host<tspan fill="url(#h-gradient)">ify</tspan>
+  </text>
+
+  <!-- Subtitle -->
+  <text x="200" y="135" font-family="Inter, Helvetica, Arial, sans-serif"
+        font-size="20" fill="#8EA0C8">
+    Next‑generation cloud hosting
+  </text>
+
 </svg>
